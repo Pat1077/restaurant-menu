@@ -2,14 +2,16 @@
 
 one:
   name: MyString
-  price: 1
   type: 
+  price_bottle: 1
+  price_coupe: 1
+  origin: MyString
   description: MyText
-  menu: one
 
 two:
   name: MyString
-  price: 1
   type: 
+  price_bottle: 1
+  price_coupe: 1
+  origin: MyString
   description: MyText
-  menu: two

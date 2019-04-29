@@ -5,6 +5,7 @@ class CreateDishes < ActiveRecord::Migration[5.2]
       t.integer :price
       t.string :type
       t.text :description
+      t.references :menu, foreign_key: true
 
       t.timestamps
     end

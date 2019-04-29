@@ -3,13 +3,9 @@
 one:
   name: MyString
   price: 1
-  type: 
   description: MyText
-  menu: one
 
 two:
   name: MyString
   price: 1
-  type: 
   description: MyText
-  menu: two
