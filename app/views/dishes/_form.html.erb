@@ -1,7 +1,7 @@
-<%= simple_form_for @dish do |f| %>
+<%= simple_form_for (@dish) do |f| %>
   <%= f.input :name %>
   <%= f.input :price %>
-  <%= f.input :type %>
+  <%= f.input :kind_dish %>
   <%= f.input :description %>
-  <%= f.submit "Add new dish", class: "confirm-button" %>
+  <%= f.submit "Save", class: "confirm-button" %>
 <% end %>

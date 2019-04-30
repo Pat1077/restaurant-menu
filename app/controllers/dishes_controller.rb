@@ -14,7 +14,7 @@ class DishesController < ApplicationController
 
   def create
     @dish = Dish.new(dish_params)
-    @dish.save
+    @dish.save!
 
     redirect_to dish_path(@dish)
   end
@@ -28,7 +28,7 @@ class DishesController < ApplicationController
     redirect_to dish_path(@dish)
   end
 
-  def delete
+  def destroy
     @dish.destroy
 
     redirect_to dishes_path
@@ -37,7 +37,7 @@ class DishesController < ApplicationController
   private
 
   def dish_params
-    params.require(:dish).permit(:name, :type, :description, :price)
+    params.require(:dish).permit(:id, :name, :kind_dish, :description, :price)
   end
 
   def set_dish

@@ -1,7 +1,10 @@
+<%= link_to "New dish", new_dish_path  %>
+
 <% @dishes.each do |dish| %>
   <h2><%= link_to dish.name, dish_path(dish) %></h2>
-  <p><%= dish.type %> - <%= dish.price %></p>
-  <%= link_to "Delete", restaurant_path(restaurant),
+  <p><%= dish.kind_dish %> - <%= dish.price %></p>
+  <%= link_to "Edit", edit_dish_path(dish) %>
+  <%= link_to "Delete", dish_path(dish),
       method: :delete,
       data: { confirm: "Are you sure?" } %>
 <% end %>
