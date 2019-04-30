@@ -1,0 +1,7 @@
+<%= simple_form_for @dish do |f| %>
+  <%= f.input :name %>
+  <%= f.input :price %>
+  <%= f.input :type %>
+  <%= f.input :description %>
+  <%= f.submit "Add new dish", class: "confirm-button" %>
+<% end %>
