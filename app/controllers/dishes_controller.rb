@@ -1,11 +1,9 @@
 class DishesController < ApplicationController
+  before_action :fix_fields, only: [:create, :update]
   before_action :set_dish, only: [:show, :edit, :update, :destroy]
 
   def index
     @dishes = Dish.all
-  end
-
-  def show
   end
 
   def new
@@ -13,19 +11,24 @@ class DishesController < ApplicationController
   end
 
   def create
+    raise
     @dish = Dish.new(dish_params)
-    @dish.save!
-
-    redirect_to dish_path(@dish)
+    if @dish.save
+      redirect_to dishes_path
+    else
+      render :new
+    end
   end
 
   def edit
   end
 
   def update
-    @dish.update(dish_params)
-
-    redirect_to dish_path(@dish)
+    if @dish.update(dish_params)
+      redirect_to dishes_path
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -42,5 +45,9 @@ class DishesController < ApplicationController
 
   def set_dish
     @dish = Dish.find(params[:id])
+  end
+
+  def fix_fields
+    params[:dish][:price] = params[:dish][:price].to_s.gsub(',', '.').to_f
   end
 end

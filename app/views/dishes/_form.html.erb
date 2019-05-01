@@ -1,7 +1,7 @@
 <%= simple_form_for (@dish) do |f| %>
   <%= f.input :name %>
-  <%= f.input :price %>
-  <%= f.input :kind_dish %>
+  <%= f.input :price, as: :string%>
+  <%= f.input :kind_dish, selected: "Other", collection: [ "Other", "Entrée", "Plat", "Dessert"] %>
   <%= f.input :description %>
   <%= f.submit "Save", class: "confirm-button" %>
 <% end %>

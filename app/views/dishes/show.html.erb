@@ -1,5 +1,5 @@
 <h2><%= @dish.name %></h2>
-<p><%= @dish.price %></p>
+<p><%= number_with_precision(@dish.price, precision: 2, separator: ",")%></p>
 <p><%= @dish.kind_dish %></p>
 <p><%= @dish.description %></p>
 <%= link_to "See all dishes", dishes_path  %>
